@@ -1,0 +1,19 @@
+.accordian h3 {
+    background: #999;
+    padding: 5px 10px;
+    color: #fff;
+    border: 2px solid #000;
+  }
+  .accordian p {
+    background: #e7e0e0;
+    padding: 10px 10px;
+  }
+  .show {
+    display: block;
+  }
+  .hide{
+    display:none;
+  }
+  .accordian {
+    text-align: left;
+}
