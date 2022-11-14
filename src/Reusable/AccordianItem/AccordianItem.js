@@ -9,7 +9,6 @@ const AccordianItem = (props) => {
        //alert(typeof(itemNo))
     };
     return <React.Fragment>
-        <h2>{val} == {itemNo}</h2>
         <h3 onClick={fnClick} id={val}>{item.header}</h3>
         <p className={val == itemNo ? 'show' :'hide'}>{item.body}</p>
     </React.Fragment>
