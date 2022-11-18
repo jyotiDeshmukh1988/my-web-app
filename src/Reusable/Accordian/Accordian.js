@@ -4,7 +4,7 @@ const Accordian = (props) =>{
     const {data} = props
     const [itemNo, setitemNo] = React.useState(0);
     const fnClick = (eve) => {
-        alert(eve.target.id)
+        //alert(eve.target.id)
         setitemNo(eve.target.id === itemNo ? -1 : eve.target.id)
     };
         return <div className="container accordian">
