@@ -2,6 +2,18 @@
     background-color: #d0d7da;
     line-height: 40px;
 }
+.mobile-menu{
+    min-height: 180px;
+    text-align: left !important;
+    width: 150px;
+    display: inline-block;
+    position: absolute;
+    z-index: 9999;
+    padding: 5px;
+    line-height: 40px;
+    background-color: #d0d7da;
+    transition: left 1s;
+}
 .menu>a{
     margin-right: 15px;
     letter-spacing: 5px;
@@ -12,4 +24,18 @@
 .menuActive{
     color:red !important;
     font-size:20px !important;
+}
+.mobile-menu-btn{
+    border: 0px;
+    background:transparent;
+    position: absolute;
+    right: 0;
+}
+.mobile-menu>a{
+    display: block;
+    margin-right: 15px;
+    letter-spacing: 5px;
+    font-weight: bold;
+    font-size: 18px;
+    color: #fff;
 }

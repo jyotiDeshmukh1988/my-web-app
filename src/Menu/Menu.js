@@ -13,6 +13,25 @@ const Menu = () => {
   const loc = useLocation()
   console.log(loc.pathname)
   const [menuItem,setMenuItem] = useState(loc.pathname==='/'?'home':loc.pathname.slice(1))
+  const [isMobileView,setisMobileView] = useState(document.body.offsetWidth<600)
+  const [left,setLeft] = useState(0)
+  let timeOutId;
+  window.addEventListener('resize',()=>{
+    clearTimeout(timeOutId)
+    timeOutId = setTimeout(()=>{
+      handleResize()
+    },100)
+  })
+  
+const handleResize = ()=>{
+  let _width = document.body.offsetWidth
+      //console.log("window "+window.innerWidth)
+      //console.log("document "+_width)
+      let isMobileView = false
+      if(_width < 600) isMobileView = true
+      setisMobileView(isMobileView)
+}
+
   const fnMenuClick = (eve) =>{
     eve.stopPropagation();
     //alert(eve.target)
@@ -24,10 +43,15 @@ const Menu = () => {
       //alert(id)
       setMenuItem(id)
     }
+    if(isMobileView) setLeft(-150)
+   }
+   const fnMobileMenuBtnClick = () =>{
+      setLeft(left == 0 ? -150 : 0)
    }
   return (
     <div>
-    <div className='menu text-end' onClick={fnMenuClick}>
+    {isMobileView && <button onClick={fnMobileMenuBtnClick} class="mobile-menu-btn"><img src="mobile-menu.png" width="30"/></button>}
+    <div style={{left:left+'px'}} className={`${isMobileView ? 'mobile-menu' : 'menu'} text-end`} onClick={fnMenuClick}>
     <a className={menuItem === "home" ? "menuActive":""} id="home" href="/#">Home</a>
     <a className={menuItem === "about"? "menuActive":""} id="about" href="/#/about">About</a>
     <a className={menuItem === "contact" ? "menuActive":""} id="contact" href="/#/contact">Contact</a>
