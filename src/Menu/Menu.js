@@ -14,7 +14,7 @@ const Menu = () => {
   console.log(loc.pathname)
   const [menuItem,setMenuItem] = useState(loc.pathname==='/'?'home':loc.pathname.slice(1))
   const [isMobileView,setisMobileView] = useState(document.body.offsetWidth<600)
-  const [left,setLeft] = useState(0)
+  const [left,setLeft] = useState(-150)
   let timeOutId;
   window.addEventListener('resize',()=>{
     clearTimeout(timeOutId)
@@ -43,10 +43,10 @@ const handleResize = ()=>{
       //alert(id)
       setMenuItem(id)
     }
-    if(isMobileView) setLeft(-150)
+    if({isMobileView})setLeft(-150)
    }
    const fnMobileMenuBtnClick = () =>{
-      setLeft(left == 0 ? -150 : 0)
+      setLeft(left === 0 ? -150 : 0)
    }
   return (
     <div>
