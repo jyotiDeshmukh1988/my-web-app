@@ -50,7 +50,7 @@ const handleResize = ()=>{
    }
   return (
     <div>
-    {isMobileView && <button onClick={fnMobileMenuBtnClick} class="mobile-menu-btn"><img src="mobile-menu.png" width="30"/></button>}
+    {isMobileView && <button onClick={fnMobileMenuBtnClick} className="mobile-menu-btn"><img src="mobile-menu.png" width="30"/></button>}
     <div style={{left:left+'px'}} className={`${isMobileView ? 'mobile-menu' : 'menu'} text-end`} onClick={fnMenuClick}>
     <a className={menuItem === "home" ? "menuActive":""} id="home" href="/#">Home</a>
     <a className={menuItem === "about"? "menuActive":""} id="about" href="/#/about">About</a>
